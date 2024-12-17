@@ -30,14 +30,16 @@ public class MenuServlet extends HttpServlet {
 			break;
 		}
 		case "AÑADIR PRODUCTO": {
-			break;
+			nav = "addProducto.jsp";
 		}
+			break;
+		/*}
 		case "MODIFICAR PRODUCTO": {
 			break;
 		}
 		case "ELIMINAR PRODUCTO": {
 			break;
-		}
+		}*/
 		}
 		request.getRequestDispatcher(nav).include(request, response);
 

@@ -33,14 +33,14 @@ public class ModificarServlet extends HttpServlet {
 				out.println("<html>");
 				out.println("<head>");
 				out.println("<meta charset=\"UTF-8\">");
-				out.println("<title>Borrado exitoso</title>");
+				out.println("<title>Modificación exitoso</title>");
 				out.println("</head>");
 				out.println("<body style='background-color: #c4fffc'>");
 
 				p.setNombre(request.getParameter("nombre"));
 				p.setCategoria(Categoria.valueOf(request.getParameter("categoria")));
 				p.setPrecio(Double.parseDouble(request.getParameter("precio")));
-				p.setStock(Double.parseDouble(request.getParameter("precio")));
+				p.setStock(Double.parseDouble(request.getParameter("stock")));
 
 				out.println("<h2 align='center'> EL PRODUCTO [" + p.getId() + "] HA SIDO MODIFICADO </h2>");
 				out.println("<p align='center'>" + p + "</p>");

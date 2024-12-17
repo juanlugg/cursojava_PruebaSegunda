@@ -41,8 +41,12 @@
 		<div align="center">
 			<form action="ModificarServlet" method="get">
 			<input type="text" name="producto" value="<%=producto.getId()%>" readonly="readonly">
-			<input type="text" name="nombre" value="<%=producto.getNombre()%>">
-			<input type="text" name="categoria" value="<%=producto.getCategoria()%>">
+			<input type="text" name="nombre" value="<%=producto.getNombre()%>">		
+			<select name="categoria"> 
+				<% for(Categoria c : Categoria.values()){%>
+			%> <option value="<%=c%>" <%= c.equals(producto.getCategoria()) ? "selected" : "" %>><%=c%></option>	
+			<%}%>
+			</select>
 			<input type="text" name="precio" value="<%=producto.getPrecio()%>">
 			<input type="text" name="stock" value="<%=producto.getStock()%>">	
 			<input type="submit" value="ACEPTAR" > 
