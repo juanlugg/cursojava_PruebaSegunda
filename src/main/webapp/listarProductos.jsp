@@ -16,6 +16,9 @@
 			<input type="submit" value="Volver Atrás" style="background-color:#e5fffc"> 
 		</form> 
 	</div>
+	<%
+	if(!AlmacenService.getAlmacen().isEmpty()){
+	%>
 		<table border="2px" align="center" style="background-color:#e5fffc">
 			<tr>
 				<th>ID</th>
@@ -25,9 +28,7 @@
 				<th>Stock</th>
 				<th>----</th>			
 			</tr>
-	<%
-	for(Producto p : AlmacenService.getAlmacen()){
-		%>
+	<%for(Producto p : AlmacenService.getAlmacen()){%>
 			<tr>
 				<td><%=p.getId()%></th>
 				<td><%=p.getNombre()%></th>
@@ -42,7 +43,11 @@
 					</form>
 				</td>	
 			</tr>
-	<%}%>
+	<%}}
+	else{
+		%><p align="center"><i>~~NO HAY PRODUCTOS TODAVIA~~</i></p><%
+	}
+	%>
 </table>
 </body>
 </html>

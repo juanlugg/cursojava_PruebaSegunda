@@ -61,8 +61,8 @@ public final class Producto {
 
 	@Override
 	public String toString() {
-		return "ID : " + id + ", nombre = " + nombre + ", categoria = " + categoria + ", precio = " + precio
-				+ ", stock = " + stock + "]";
+		return "[ID = " + id + " | nombre = " + nombre + " | categoria = " + categoria + " | precio = " + precio
+				+ " | stock = " + stock + "]";
 	}
 
 }

@@ -6,10 +6,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>AÃ±adir Producto</title>
+<title>Añadir Producto</title>
 </head>
 <body style="background-color: #c4fffc">
 	<h1 align="center"><i>AÑADIR PRODUCTO</i></h1>
+	<div align="right"> 
+		<form action="javascript:history.back()"> 
+			<input type="submit" value="Volver Atrás" style="background-color:#e5fffc"> 
+		</form> 
+	</div>
 	<div align="center">
 		<form action="AddServlet" method="get">
 			<input type="text" name="id"> 
@@ -19,8 +24,8 @@
 			<option value="<%=c%>"><%=c%></option>	
 			<%}%>
 			</select>
-			<input type="text" name="precio"> 
-			<input type="text" name="stock"> 
+			<input type="number" name="precio" step="0.01"> 
+			<input type="number" name="stock"> 
 			<input type="submit" value="ACEPTAR">
 		</form>
 	</div>

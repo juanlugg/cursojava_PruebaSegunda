@@ -13,7 +13,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ModificarServlet
+ * 
+ * @author Juan Luis Guerra Gennich
+ * @version 1.0.0 17/12/2024 
+ * Clase Servlet que gestionará el modificado del producto
  */
 public class ModificarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -36,11 +39,23 @@ public class ModificarServlet extends HttpServlet {
 				out.println("<title>Modificación exitoso</title>");
 				out.println("</head>");
 				out.println("<body style='background-color: #c4fffc'>");
-
-				p.setNombre(request.getParameter("nombre"));
-				p.setCategoria(Categoria.valueOf(request.getParameter("categoria")));
-				p.setPrecio(Double.parseDouble(request.getParameter("precio")));
-				p.setStock(Double.parseDouble(request.getParameter("stock")));
+				String nombre = request.getParameter("nombre");
+				Categoria categoria = Categoria.valueOf(request.getParameter("categoria"));
+				Double precio, stock;
+				try {
+					precio = Double.parseDouble(request.getParameter("precio"));
+				}catch(Exception e){
+					precio = 0.0;
+				}	
+				try {
+					stock = Double.parseDouble(request.getParameter("stock"));
+				}catch(Exception e){
+					stock = 0.0;
+				}
+				p.setNombre(nombre);
+				p.setCategoria(categoria);
+				p.setPrecio(precio);
+				p.setStock(stock);
 
 				out.println("<h2 align='center'> EL PRODUCTO [" + p.getId() + "] HA SIDO MODIFICADO </h2>");
 				out.println("<p align='center'>" + p + "</p>");
